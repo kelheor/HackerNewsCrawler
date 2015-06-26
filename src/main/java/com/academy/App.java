@@ -25,6 +25,9 @@ public class App implements CommandLineRunner {
     public void run(String... strings) throws Exception {
         System.out.println("HACKER NEWS CRAWLER");
         crawlerService.analyzeWebServer();
+
+        String s = "ASd<title>asdw</title>asf";
+
     /*
      * crawlStorageFolder is a folder where intermediate crawl data is
      * stored.
@@ -35,7 +38,7 @@ public class App implements CommandLineRunner {
      * numberOfCrawlers shows the number of concurrent threads that should
      * be initiated for crawling.
      */
-        int numberOfCrawlers = 1;
+        int numberOfCrawlers = 10;
 
         CrawlConfig config = new CrawlConfig();
 
@@ -57,7 +60,7 @@ public class App implements CommandLineRunner {
      * You can set the maximum number of pages to crawl. The default value
      * is -1 for unlimited number of pages
      */
-        config.setMaxPagesToFetch(1000);
+        //config.setMaxPagesToFetch(1000);
 
         /**
          * Do you want crawler4j to crawl also binary data ?
@@ -96,7 +99,8 @@ public class App implements CommandLineRunner {
      * URLs that are fetched and then the crawler starts following links
      * which are found in these pages
      */
-        controller.addSeed("http://habrahabr.ru/");
+        // controller.addSeed("http://habrahabr.ru/interesting");
+         controller.addSeed("https://news.ycombinator.com/news");
 
     /*
      * Start the crawl. This is a blocking operation, meaning that your code
