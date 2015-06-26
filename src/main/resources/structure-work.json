@@ -1,0 +1,8 @@
+{
+	post: {
+		properties: {
+		  text: { type: "string", search_analyzer : "my_analyzer", index_analyzer: "my_analyzer_index" },
+		  title: { type: "string", search_analyzer : "my_analyzer", index_analyzer: "my_analyzer_index" }
+		}
+	}
+}

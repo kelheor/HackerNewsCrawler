@@ -1,0 +1,16 @@
+ПРИ УСТАНОВКЕ:
+// Настройка и создание индекса: curl -XPUT localhost:9200/hackernews -d @settings.json
+// Создание отображения поисковой сущности: curl -XPOST localhost:9200/hackernews/post -d {}
+// Настройка отображения: curl -XPUT localhost:9200/hackernews/post/_mapping -d @structure-work.json
+
+ПОИСК:
+// Поиск: curl -XPOST localhost:9200/hackernews/post/_search?pretty=true -d @search_query.json
+
+ПРИ ПЕРЕУСТАНОВКЕ ИЛИ УДАЛЕНИИ:
+// Удаление индекса: curl -XDELETE localhost:9200/post
+// Удаление отображения: curl -XDELETE localhost:9200/hackernews/post/_mapping
+// Удаление из индекса поисковой сущности: curl -XDELETE localhost:9200/hackernews/post/
+
+ПЛАГИНЫ:
+bin/plugin -install analysis-morphology -url http://dl.bintray.com/content/imotov/elasticsearch-plugins/org/elasticsearch/elasticsearch-analysis-morphology/1.2.0/elasticsearch-analysis-morphology-1.2.0.zip
+plugin -install royrusso/elasticsearch-HQ
